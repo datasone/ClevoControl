@@ -18,11 +18,13 @@ Device (SMCD)
 }
 ```
 
-You may already have SMCD device in your DSDT, then please ensure one of your _HID or _CID is "MON0000" or "MON00000" and add WMIB method into it.
+You may already have SMCD device in your DSDT, then please ensure one of your \_HID or \_CID is "MON0000" or "MON00000" and add WMIB method into it.
 
 After you edit your DSDT, install ClevoControl.kext and use ClevoKBFanControl (a small command-line program) to control settings.
 
 Show usage by `ClevoKBFanControl -h`.
+
+This project uses [args](https://github.com/Taywee/args) for parsing command-line arguments. And the WMI operate codes used in this project comes from [clover-xsm-wmi](https://github.com/sonnym/clevo-xsm-wmi) and reverse engineering Clevo Control Center by myself.
 
 # Some Extra information
 ## Fan Speed

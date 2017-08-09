@@ -9,17 +9,42 @@
 /* Begin PBXBuildFile section */
 		11A652441F39D78A002E8088 /* ClevoControl.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 11A652431F39D78A002E8088 /* ClevoControl.hpp */; };
 		11A652461F39D78A002E8088 /* ClevoControl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11A652451F39D78A002E8088 /* ClevoControl.cpp */; };
+		11A652541F3A1014002E8088 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11A652531F3A1014002E8088 /* main.cpp */; };
+		11A6525A1F3A1E18002E8088 /* ECCtrl.h in Headers */ = {isa = PBXBuildFile; fileRef = 11A652591F3A1E18002E8088 /* ECCtrl.h */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		11A6524F1F3A1014002E8088 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		11A652401F39D78A002E8088 /* ClevoControl.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ClevoControl.kext; sourceTree = BUILT_PRODUCTS_DIR; };
 		11A652431F39D78A002E8088 /* ClevoControl.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ClevoControl.hpp; sourceTree = "<group>"; };
 		11A652451F39D78A002E8088 /* ClevoControl.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ClevoControl.cpp; sourceTree = "<group>"; };
 		11A652471F39D78A002E8088 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		11A652511F3A1014002E8088 /* ClevoKBFanControl */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ClevoKBFanControl; sourceTree = BUILT_PRODUCTS_DIR; };
+		11A652531F3A1014002E8088 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		11A652581F3A15E6002E8088 /* args.hxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = args.hxx; sourceTree = "<group>"; };
+		11A652591F3A1E18002E8088 /* ECCtrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECCtrl.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		11A6523C1F39D78A002E8088 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		11A6524E1F3A1014002E8088 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -32,7 +57,9 @@
 		11A652361F39D78A002E8088 = {
 			isa = PBXGroup;
 			children = (
+				11A652591F3A1E18002E8088 /* ECCtrl.h */,
 				11A652421F39D78A002E8088 /* ClevoControl */,
+				11A652521F3A1014002E8088 /* ClevoKBFanControl */,
 				11A652411F39D78A002E8088 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -41,6 +68,7 @@
 			isa = PBXGroup;
 			children = (
 				11A652401F39D78A002E8088 /* ClevoControl.kext */,
+				11A652511F3A1014002E8088 /* ClevoKBFanControl */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -55,6 +83,15 @@
 			path = ClevoControl;
 			sourceTree = "<group>";
 		};
+		11A652521F3A1014002E8088 /* ClevoKBFanControl */ = {
+			isa = PBXGroup;
+			children = (
+				11A652531F3A1014002E8088 /* main.cpp */,
+				11A652581F3A15E6002E8088 /* args.hxx */,
+			);
+			path = ClevoKBFanControl;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -63,6 +100,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				11A652441F39D78A002E8088 /* ClevoControl.hpp in Headers */,
+				11A6525A1F3A1E18002E8088 /* ECCtrl.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,6 +125,23 @@
 			productReference = 11A652401F39D78A002E8088 /* ClevoControl.kext */;
 			productType = "com.apple.product-type.kernel-extension";
 		};
+		11A652501F3A1014002E8088 /* ClevoKBFanControl */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 11A652571F3A1014002E8088 /* Build configuration list for PBXNativeTarget "ClevoKBFanControl" */;
+			buildPhases = (
+				11A6524D1F3A1014002E8088 /* Sources */,
+				11A6524E1F3A1014002E8088 /* Frameworks */,
+				11A6524F1F3A1014002E8088 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ClevoKBFanControl;
+			productName = ClevoKBFanControl;
+			productReference = 11A652511F3A1014002E8088 /* ClevoKBFanControl */;
+			productType = "com.apple.product-type.tool";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -97,6 +152,10 @@
 				ORGANIZATIONNAME = datasone;
 				TargetAttributes = {
 					11A6523F1F39D78A002E8088 = {
+						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Automatic;
+					};
+					11A652501F3A1014002E8088 = {
 						CreatedOnToolsVersion = 8.3.3;
 						ProvisioningStyle = Automatic;
 					};
@@ -115,6 +174,7 @@
 			projectRoot = "";
 			targets = (
 				11A6523F1F39D78A002E8088 /* ClevoControl */,
+				11A652501F3A1014002E8088 /* ClevoKBFanControl */,
 			);
 		};
 /* End PBXProject section */
@@ -135,6 +195,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				11A652461F39D78A002E8088 /* ClevoControl.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		11A6524D1F3A1014002E8088 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11A652541F3A1014002E8088 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,6 +304,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1.0.0d1;
 				INFOPLIST_FILE = ClevoControl/Info.plist;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MODULE_NAME = moe.datasone.ClevoControl;
 				MODULE_VERSION = 1.0.0d1;
 				PRODUCT_BUNDLE_IDENTIFIER = moe.datasone.ClevoControl;
@@ -250,11 +319,28 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1.0.0d1;
 				INFOPLIST_FILE = ClevoControl/Info.plist;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MODULE_NAME = moe.datasone.ClevoControl;
 				MODULE_VERSION = 1.0.0d1;
 				PRODUCT_BUNDLE_IDENTIFIER = moe.datasone.ClevoControl;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = kext;
+			};
+			name = Release;
+		};
+		11A652551F3A1014002E8088 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				HEADER_SEARCH_PATHS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		11A652561F3A1014002E8088 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				HEADER_SEARCH_PATHS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
 		};
@@ -275,6 +361,15 @@
 			buildConfigurations = (
 				11A6524B1F39D78A002E8088 /* Debug */,
 				11A6524C1F39D78A002E8088 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		11A652571F3A1014002E8088 /* Build configuration list for PBXNativeTarget "ClevoKBFanControl" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				11A652551F3A1014002E8088 /* Debug */,
+				11A652561F3A1014002E8088 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};

@@ -20,7 +20,7 @@ Device (SMCD)
 
 You may already have SMCD device in your DSDT, then please ensure one of your \_HID or \_CID is "MON0000" or "MON00000" and add WMIB method into it.
 
-After you edit your DSDT, install ClevoControl.kext and use ClevoKBFanControl (a small command-line program) to control settings.
+After you edit your DSDT, install ClevoControl.kext to /L/E (injecting it using Clover cause kernel panic) and use ClevoKBFanControl (a small command-line program) to control settings.
 
 Show usage by `ClevoKBFanControl -h`.
 

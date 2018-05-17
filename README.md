@@ -9,14 +9,16 @@ Directly calling WMBB method in WMI device will lead to a kernel panic. I have n
 ```
 Device (SMCD)
 {
-    Name (_HID, EisaId ("PNP0C02")
+    Name (_HID, EisaId ("PNP0C02"))
     Name (_CID, "MON00000")
-    Mathod (WMIB, 3, Serialized)
+    Method (WMIB, 3, Serialized)
     {
         \_SB.WMI.WMBB(Arg0, Arg1, Arg2)
     }
 }
 ```
+
+put it above `Device (EC)`, but below `Scope (\_SB.PCI0.LPCB)`
 
 You may already have SMCD device in your DSDT, then please ensure one of your \_HID or \_CID is "MON0000" or "MON00000" and add WMIB method into it.
 
@@ -84,6 +86,15 @@ Method (FAN2, 0, Serialized)
 }
 ```
 
+The B1B2 method can be added with MaciASL:
+```
+into method label B1B2 remove_entry;
+into definitionblock code_regex . insert
+begin
+Method (B1B2, 2, NotSerialized) { Return(Or(Arg0, ShiftLeft(Arg1, 8))) }\n
+end;
+```
+
 If you only have 2 or 1 fan, delete FAN2 or FAN2 & FAN1, respectively.
 
 Then find for EmbeddedControl Field in your DSDT, search for EmbeddedControl in your DSDT and you will see something like this:
@@ -96,7 +107,7 @@ Field (EC81, ByteAcc, Lock, Preserve)
 }
 ```
 
-Add these in the Field, as mentioned above delete extra values. e.g. delete FG10 and FG11 if you don't have two GPU fans.
+Add these in the Field method as first. As mentioned above delete extra values. e.g. delete FG10 and FG11 if you don't have two GPU fans.
 
 ```
 Offset (0xD0),

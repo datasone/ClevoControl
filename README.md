@@ -29,7 +29,11 @@ This project uses [args](https://github.com/Taywee/args) for parsing command-lin
 
 # Some Extra information
 ## Fan Speed
-Edit DSDT, for my laptop with 3 fans, add these to SMCD device (it uses B1B2 method, add it if you don't have it in your DSDT):
+To actually show the fan speed in HWSensors.app, you must have
+`FakeSMC_ACPISensors.kext` installed (both the kext and the app are available in
+[Rehabman's FakeSMC](https://bitbucket.org/RehabMan/os-x-fakesmc-kozlek/downloads/)),
+and edit the DSDT. For my laptop with 3 fans, add these to SMCD device (it uses B1B2
+method, add it if you don't have it in your DSDT):
 
 ```
 Name (TACH, Package (0x06)
@@ -117,5 +121,9 @@ FG01,   8,    // GPU Fan0 Speed
 FG10,   8,
 FG11,   8,    // GPU Fan1 Speed
 ```
+Note: the second GPU fan (GPU Fan1) can be located at a different offset.
+You can try to find the offset by looking at the EC table. Under windows you can
+use [RWEverything](http://rweverything.com/download/). For Clevo P950HR the second
+GPU fan is located at `Offset (0xE0)`, so edit the above accordingly.
 
 Last, edit FakeSMC.kext/Contents/Info.plist, change the data in FNum from 00 to number of your fans.

@@ -18,7 +18,6 @@ Device (SMCD)
 }
 ```
 
-put it above `Device (EC)`, but below `Scope (\_SB.PCI0.LPCB)`
 
 You may already have SMCD device in your DSDT, then please ensure one of your \_HID or \_CID is "MON0000" or "MON00000" and add WMIB method into it.
 

@@ -61,7 +61,7 @@ bool ClevoControl::start(IOService *provider)
 	bzero(&ep_ctl, sizeof(ep_ctl));
 	ep_ctl.ctl_id = 0;
 	ep_ctl.ctl_unit = 0;
-	strcpy(ep_ctl.ctl_name, "moe.datasone.clevocontrol.ctl");
+	strlcpy(ep_ctl.ctl_name, "moe.datasone.clevocontrol.ctl", sizeof(ep_ctl.ctl_name));
 	ep_ctl.ctl_flags = CTL_FLAG_PRIVILEGED & CTL_FLAG_REG_ID_UNIT;
 	ep_ctl.ctl_send = EPHandleWrite;
 	ep_ctl.ctl_setopt = EPHandleSet;

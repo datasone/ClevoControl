@@ -3,6 +3,8 @@ Control keyboard backlight and fan policy for Clevo Hackintosh
 This project only supports clevo laptops with full-color backlight support. However, you can easily modify it to fit in 8-color backlight keyboards.
 I have only tested it on my Clevo P650RS so I won't promise it will work, but it should.
 
+__DEPRECATED__: As Apple removed Nvidia support in recent macOS versions, I stopped using Clevo laptop as Hackintosh and thus not going to add new features to this kext. You may refer to [ClevoService](https://github.com/FreeJHack/ClevoService), which has more features such as keyboard controls and surviving through power off using NVRAM.
+
 # How to use
 Directly calling WMBB method in WMI device will lead to a kernel panic. I have no idea about why it's happening, so you should add following code into your DSDT:
 
